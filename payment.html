@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Order Details | SwimWave Atelier</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="subpage-shell">
+      <section class="subpage-hero container">
+        <p class="eyebrow">Order Details</p>
+        <h1>Track the items selected for checkout and your latest paid order.</h1>
+        <p class="lead">
+          Review your order in a cleaner details view, then confirm payment when you are ready.
+        </p>
+      </section>
+
+      <section class="subpage-panel container">
+        <div id="paymentSummary" class="cart-page-content"></div>
+        <div class="subpage-actions">
+          <a class="secondary-link" href="cart.html">Back to Cart</a>
+          <button id="confirmPaymentButton" class="primary" type="button" onclick="confirmPayment()">Confirm Payment</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SwimWave Atelier</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="container header-content">
+          <div class="brand-block">
+            <a href="index.html" class="brand">SwimWave Atelier</a>
+          </div>
+
+          <nav class="site-nav" aria-label="Primary">
+            <a href="index.html">Home</a>
+            <a href="index.html#collection">Collection</a>
+            <a href="index.html#services">Services</a>
+            <a href="contact.html">Contact</a>
+          </nav>
+
+          <div class="header-actions">
+            <button class="cart-icon-btn" onclick="viewCart()" aria-label="View cart">
+              Cart
+              <span class="cart-badge" id="cartBadge">0</span>
+            </button>
+            <button class="secondary" onclick="openOrderDetails()">Order Details</button>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero container" id="home">
+          <div class="hero-copy">
+            <p class="eyebrow">Elevated Coastal Luxury</p>
+            <h1>Swimwear styled like a private label fashion house.</h1>
+            <p class="lead">
+              SwimWave Atelier presents a refined capsule of silhouette-driven swim pieces,
+              concierge styling, and private-order service for clients who want polished resortwear.
+            </p>
+
+            <div class="hero-actions">
+              <button class="primary" onclick="goToCollection()">View Collection</button>
+              <button class="text-link" onclick="notifyCustomRequest()">Contact for Private Quote</button>
+            </div>
+
+            <div class="hero-metrics">
+              <article>
+                <strong>48h</strong>
+                <span>Priority client response</span>
+              </article>
+              <article>
+                <strong>12</strong>
+                <span>Signature premium styles</span>
+              </article>
+              <article>
+                <strong>5-Star</strong>
+                <span>Private styling experience</span>
+              </article>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <img
+              src="background-swimsuit-picture.jpg"
+              class="hero-photo"
+              alt="Luxury swimwear editorial"
+            />
+            <div class="hero-note">
+              <span class="note-label">Season Edit</span>
+              <p>Designed for yacht charters, private villas, and destination club stays.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="story-strip">
+          <div class="container story-grid">
+            <article>
+              <p class="eyebrow">Brand Positioning</p>
+              <h2>High-trust presentation for a premium clientele.</h2>
+            </article>
+            <article>
+              <p>
+                The site now leans into a luxury business identity: restrained palette, editorial
+                typography, high-margin product framing, and concierge-focused messaging.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="price-list" id="collection">
+          <div class="container">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Collection</p>
+                <h2>Signature swim pieces</h2>
+              </div>
+              <p class="section-lead">
+                Structured pricing, premium presentation, and product language positioned for a richer brand image.
+              </p>
+            </div>
+            <div class="price-grid" id="priceGrid"></div>
+            <div class="collection-actions">
+              <button class="primary" type="button" onclick="viewCart()">Cart</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="services" id="services">
+          <div class="container services-grid">
+            <article class="service-card">
+              <p class="eyebrow">01</p>
+              <h3>Private Styling</h3>
+              <p>
+                Outfit planning and fit guidance for resort travel, pool clubs, and high-visibility social events.
+              </p>
+            </article>
+            <article class="service-card">
+              <p class="eyebrow">02</p>
+              <h3>Custom Orders</h3>
+              <p>
+                Bespoke size adjustments and selective finish upgrades for clients seeking a tailored result.
+              </p>
+            </article>
+            <article class="service-card">
+              <p class="eyebrow">03</p>
+              <h3>Wholesale Ready</h3>
+              <p>
+                A presentation style suitable for boutiques, hotel partners, and upscale resort retail pitches.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="cta" id="contact">
+          <div class="container cta-content">
+            <div>
+              <p class="eyebrow">Business Contact</p>
+              <h2>Speak directly with the business about orders, quotes, and partnership requests.</h2>
+              <p>
+                Reach SwimWave Atelier for client support, custom sizing, premium order handling, and wholesale conversations.
+              </p>
+            </div>
+            <button class="primary" onclick="notifyCustomRequest()">Contact the Business</button>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-content">
+          <span>© 2026 SwimWave Atelier</span>
+          <span>Luxury swimwear for private clients and premium resort retail.</span>
+        </div>
+      </footer>
+
+      <div id="orderDetailsModal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Order Details</h2>
+            <button class="modal-close" type="button" onclick="closeOrderDetails()" aria-label="Close order details">×</button>
+          </div>
+          <div class="modal-body">
+            <div class="order-tabs">
+              <button class="order-tab active" type="button" onclick="setOrderTab('active')">Orders</button>
+              <button class="order-tab" type="button" onclick="setOrderTab('cancelled')">Cancelled</button>
+              <button class="order-tab" type="button" onclick="setOrderTab('completed')">Review</button>
+            </div>
+            <div id="orderDetailsList" class="order-history-list"></div>
+          </div>
+          <div class="modal-footer">
+            <button class="secondary" type="button" onclick="closeOrderDetails()">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
